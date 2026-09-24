@@ -102,25 +102,22 @@ img {
   border: 0;
 }
 
-@layer components {
-
 /* ===== Layout ===== */
-.container {
+@utility container {
   width: min(calc(100% - 48px), 1200px);
+  max-width: 1200px;
   margin-inline: auto;
-}
 
-@media (min-width: 768px) {
-  .container {
+  @media (min-width: 768px) {
     width: min(calc(100% - 64px), 1200px);
   }
-}
 
-@media (min-width: 1024px) {
-  .container {
+  @media (min-width: 1024px) {
     width: min(calc(100% - 80px), 1200px);
   }
 }
+
+@layer components {
 
 /* ===== Reveal on scroll (closing + footer behind main) ===== */
 main {

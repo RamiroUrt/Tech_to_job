@@ -1,6 +1,6 @@
 import es from "@/messages/es.json";
-import { Reveal } from "@/components/animations/reveal";
-import { LogoSymbol } from "@/components/brand/logo-symbol";
+import { Reveal } from "@/components/ui/reveal";
+import { LogoSymbol } from "@/components/ui/logo-symbol";
 
 export function Tournaments() {
   return (

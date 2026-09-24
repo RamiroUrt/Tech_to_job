@@ -1,13 +1,7 @@
 "use client";
 
-import type { RefObject } from "react";
 import { HeroPreview } from "./hero-preview";
-
-type HeroNotebookProps = {
-  laptopRef: RefObject<HTMLDivElement | null>;
-  screenRef: RefObject<HTMLDivElement | null>;
-  baseRef: RefObject<HTMLDivElement | null>;
-};
+import type { HeroNotebookProps } from "@/types/HeroNotebookProps";
 
 export function HeroNotebook({ laptopRef, screenRef, baseRef }: HeroNotebookProps) {
   return (

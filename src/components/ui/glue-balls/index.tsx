@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { Ball } from "@/types/Ball";
 
 const MAX_BALLS = 12;
 const RES_SCALE = 0.65;
@@ -41,17 +42,6 @@ void main() {
   gl_FragColor = vec4(color, alpha);
 }
 `;
-
-type Ball = {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  r: number;
-  baseR: number;
-  phase: number;
-  angle: number;
-};
 
 export function GlueBalls() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

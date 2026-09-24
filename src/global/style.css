@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 /* ==========================================================================
    Design tokens (Tailwind v4)
@@ -31,7 +31,7 @@
   --color-gray-200: #e9ecef;
   --color-gray-300: #dee2e6;
   --color-gray-400: #ced4da;
-  --font-family-sora: var(--font-sora), Arial, sans-serif;
+  --font-family-sora: "Sora", Arial, sans-serif;
 }
 
 /* ===== Reset ===== */
@@ -42,7 +42,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-y: scroll;
   overflow-x: clip;
   scrollbar-gutter: stable;

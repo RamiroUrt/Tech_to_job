@@ -1,9 +1,6 @@
 import Image from "next/image";
 import symbol from "@/assets/SVG/SímboloNegativo.svg";
-
-type LogoSymbolProps = {
-  className?: string;
-};
+import type { LogoSymbolProps } from "@/types/LogoSymbolProps";
 
 export function LogoSymbol({ className }: LogoSymbolProps) {
   return (

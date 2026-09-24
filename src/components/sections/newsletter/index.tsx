@@ -1,7 +1,7 @@
 "use client";
 
 import es from "@/messages/es.json";
-import { Reveal } from "@/components/animations/reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Newsletter() {
   return (

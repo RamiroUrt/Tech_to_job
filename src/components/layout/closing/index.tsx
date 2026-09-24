@@ -1,6 +1,6 @@
 import es from "@/messages/es.json";
-import { GlueBalls } from "@/components/background/glue-balls";
-import { Reveal } from "@/components/animations/reveal";
+import { GlueBalls } from "@/components/ui/glue-balls";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Closing() {
   return (

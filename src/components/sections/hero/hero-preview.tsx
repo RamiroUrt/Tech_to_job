@@ -1,7 +1,7 @@
 import Image from "next/image";
 import es from "@/messages/es.json";
 import heroImage from "@/assets/illustrations/heroIMAGE.webp";
-import { LogoSymbol } from "@/components/brand/logo-symbol";
+import { LogoSymbol } from "@/components/ui/logo-symbol";
 
 const stepIcons = [
   <svg

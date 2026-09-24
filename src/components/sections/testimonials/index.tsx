@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import es from "@/messages/es.json";
-import { Reveal } from "@/components/animations/reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Testimonials() {
   const scroller = useRef<HTMLDivElement>(null);

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import es from "@/messages/es.json";
 import { HeroNotebook } from "./hero-notebook";
-import { GlueBalls } from "@/components/background/glue-balls";
+import { GlueBalls } from "@/components/ui/glue-balls";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +70,7 @@ export function Hero() {
           start: "top top",
           end: "+=150%",
           pin: true,
-          scrub: 0.5,
+          scrub: 1,
           invalidateOnRefresh: true,
           onRefresh: measure,
           onUpdate: (self) => {

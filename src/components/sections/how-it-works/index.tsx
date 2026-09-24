@@ -1,6 +1,6 @@
 import Image from "next/image";
 import es from "@/messages/es.json";
-import { Reveal } from "@/components/animations/reveal";
+import { Reveal } from "@/components/ui/reveal";
 import heroImage from "@/assets/illustrations/heroIMAGE.webp";
 
 export function HowItWorks() {

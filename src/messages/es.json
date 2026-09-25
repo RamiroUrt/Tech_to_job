@@ -5,6 +5,23 @@
     "ogTitle": "TechToJob — Comunidad tech en español",
     "ogDescription": "Desarrolladores e empresas tech se conocen antes de que exista una vacante. Únete a la comunidad."
   },
+  "ui": {
+    "home": "Inicio",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Navegación móvil",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "emailLabel": "Correo electrónico",
+    "previousTestimonials": "Testimonios anteriores",
+    "nextTestimonials": "Siguientes testimonios",
+    "linkedinProfile": "Perfil de {name} en LinkedIn",
+    "changeLanguage": "Cambiar idioma",
+    "dateLocale": "es-ES",
+    "languages": {
+      "es": "Español",
+      "en": "English"
+    }
+  },
   "header": {
     "nav": [
       { "href": "#talento", "label": "Talento" },

@@ -1,23 +1,25 @@
-import es from "@/messages/es.json";
 import { Reveal } from "@/components/ui/reveal";
 import { LogoSymbol } from "@/components/ui/logo-symbol";
+import type { MessagesProps } from "@/types/MessagesProps";
 
-export function Tournaments() {
+export function Tournaments({ messages }: MessagesProps) {
+  const { tournaments } = messages;
+
   return (
     <section className="section" id="torneos" aria-labelledby="torneos-title">
       <div className="container">
         <Reveal stagger={0.12}>
-          <span className="section-eyebrow">{es.tournaments.eyebrow}</span>
+          <span className="section-eyebrow">{tournaments.eyebrow}</span>
           <h2 id="torneos-title" className="section-title">
-            {es.tournaments.title}
+            {tournaments.title}
           </h2>
           <p className="section-description">
-            {es.tournaments.description}
+            {tournaments.description}
           </p>
         </Reveal>
 
         <Reveal stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {es.tournaments.items.map((item, i) => (
+          {tournaments.items.map((item, i) => (
             <article key={i} className="card bg-gray-50 flex flex-col relative">
               <LogoSymbol className="absolute top-3 right-3 w-5 h-5" />
               <span className="inline-flex self-start px-3 py-1 rounded-full bg-teal text-dark text-xs font-bold uppercase tracking-wide">
@@ -41,7 +43,7 @@ export function Tournaments() {
             rel="noopener noreferrer"
             className="btn btn-outline"
           >
-            {es.tournaments.discordButton}
+            {tournaments.discordButton}
           </a>
         </div>
       </div>

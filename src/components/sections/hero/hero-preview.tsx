@@ -1,7 +1,7 @@
 import Image from "next/image";
-import es from "@/messages/es.json";
 import heroImage from "@/assets/illustrations/heroIMAGE.webp";
 import { LogoSymbol } from "@/components/ui/logo-symbol";
+import type { MessagesProps } from "@/types/MessagesProps";
 
 const stepIcons = [
   <svg
@@ -42,8 +42,8 @@ const stepIcons = [
   </svg>,
 ];
 
-export function HeroPreview() {
-  const { howItWorks } = es;
+export function HeroPreview({ messages }: MessagesProps) {
+  const { howItWorks } = messages;
 
   return (
     <div className="flex h-full w-full flex-col overflow-hidden bg-[var(--color-gray-50)] px-[6cqw] py-[5cqw] text-dark">
@@ -54,6 +54,8 @@ export function HeroPreview() {
             alt="Cómo funciona TechToJob"
             width={600}
             height={450}
+            priority
+            sizes="(min-width: 1024px) 220px, 60vw"
             className="w-full h-auto rounded-[1.1cqw]"
           />
         </div>

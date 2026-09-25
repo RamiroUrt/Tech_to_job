@@ -1,57 +1,94 @@
 import type { Metadata } from "next";
-import es from "@/messages/es.json";
+import { getMessages, locales, type Locale } from "@/messages";
 
-const siteUrl = "https://techtojob.com";
+export const siteUrl = "https://techtojob.com";
 
-export const metadata: Metadata = {
-  title: {
-    default: es.meta.title,
-    template: "%s | TechToJob",
-  },
-  description: es.meta.description,
-  metadataBase: new URL(siteUrl),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    locale: "es",
-    url: siteUrl,
-    siteName: "TechToJob",
-    title: es.meta.ogTitle,
-    description: es.meta.ogDescription,
-    images: [
+const ogImage = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: "TechToJob",
+};
+
+const isPreview = process.env.VERCEL_ENV === "preview";
+
+const languagePaths = Object.fromEntries(
+  locales.map((locale) => [locale, `/${locale}`]),
+) as Record<Locale, string>;
+
+export function buildMetadata(locale: Locale): Metadata {
+  const { meta } = getMessages(locale);
+
+  return {
+    title: {
+      default: meta.title,
+      template: "%s | TechToJob",
+    },
+    description: meta.description,
+    metadataBase: new URL(siteUrl),
+    applicationName: "TechToJob",
+    generator: "Next.js",
+    referrer: "origin-when-cross-origin",
+    alternates: {
+      canonical: languagePaths[locale],
+      languages: { ...languagePaths, "x-default": languagePaths.es },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "es" ? "es_ES" : "en_US",
+      url: languagePaths[locale],
+      siteName: "TechToJob",
+      title: meta.ogTitle,
+      description: meta.ogDescription,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@techtojob",
+      creator: "@techtojob",
+      title: meta.ogTitle,
+      description: meta.ogDescription,
+      images: [ogImage.url],
+    },
+    robots: isPreview
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
+    formatDetection: { telephone: false },
+  };
+}
+
+export function buildJsonLd(locale: Locale) {
+  const { meta } = getMessages(locale);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "TechToJob — Comunidad de desarrolladores y empresas tech en español",
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "TechToJob",
+        url: siteUrl,
+        logo: `${siteUrl}/icon.svg`,
+        image: `${siteUrl}/og-image.png`,
+        inLanguage: locale,
+        description: meta.description,
+        sameAs: [
+          "https://www.linkedin.com/company/techtojob/",
+          "https://x.com/techtojob",
+          "https://www.instagram.com/techtojob",
+          "https://discord.gg/h9FFgKdkRd",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "TechToJob",
+        inLanguage: locale,
+        description: meta.description,
+        publisher: { "@id": `${siteUrl}/#organization` },
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: es.meta.ogTitle,
-    description: es.meta.ogDescription,
-    images: ["/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-export const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "TechToJob",
-  url: siteUrl,
-  logo: `${siteUrl}/logos/v2Positivo.svg`,
-  sameAs: [
-    "https://www.linkedin.com/company/techtojob/",
-    "https://x.com/techtojob",
-    "https://www.instagram.com/techtojob",
-    "https://discord.gg/h9FFgKdkRd",
-  ],
-  description: es.meta.description,
-};
+  };
+}

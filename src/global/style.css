@@ -31,7 +31,7 @@
   --color-gray-200: #e9ecef;
   --color-gray-300: #dee2e6;
   --color-gray-400: #ced4da;
-  --font-family-sora: "Sora", Arial, sans-serif;
+  --font-family-sora: var(--font-sora, "Sora"), Arial, sans-serif;
 }
 
 /* ===== Reset ===== */
@@ -312,13 +312,31 @@ main {
 }
 
 .footer-links a {
+  position: relative;
+  display: inline-block;
   font-size: 0.875rem;
   color: var(--color-gray-400);
-  transition: color 0.15s ease;
+  transition: color 0.2s ease;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-teal);
+  transition: width 0.3s ease;
 }
 
 .footer-links a:hover {
   color: var(--color-teal);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
 }
 
 .footer-bottom {
@@ -378,6 +396,77 @@ body.hero-zoomed .hero-card:hover {
 .glue-balls {
   mix-blend-mode: screen;
   filter: blur(0.5px);
+}
+
+/* ===== Selector de idioma — segmentado con blob lava ===== */
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 999px;
+  background: var(--color-gray-50);
+  isolation: isolate;
+}
+
+.lang-switch-item {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-dark);
+  transition: font-weight 0.2s ease;
+}
+
+.lang-switch-item[aria-current="false"],
+.lang-switch-item:not([aria-current]) {
+  font-weight: 600;
+}
+
+.lang-switch-item[data-active="true"] > [aria-hidden="true"] {
+  opacity: 0;
+}
+
+.lang-switch-blob,
+.lang-switch-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+
+.lang-switch-blob {
+  z-index: 1;
+  background: var(--color-teal);
+}
+
+.lang-switch-blob-label {
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.lang-switch-glow {
+  z-index: 0;
+  background: var(--color-teal);
+  filter: blur(7px);
 }
 
 /* ===== Hero — notebook ===== */
@@ -468,4 +557,43 @@ body.hero-zoomed .hero-card:hover {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ===== Cursor personalizado — globito teal dentro de uno negro ===== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.custom-cursor-ball,
+.custom-cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+}
+
+.custom-cursor-ball {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--color-dark);
+  background: transparent;
+}
+
+.custom-cursor-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-teal);
+}
+
+/* Solo con mouse real: en táctil y con prefers-reduced-motion queda el cursor nativo */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none;
+  }
 }

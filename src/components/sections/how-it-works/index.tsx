@@ -1,9 +1,11 @@
 import Image from "next/image";
-import es from "@/messages/es.json";
 import { Reveal } from "@/components/ui/reveal";
 import heroImage from "@/assets/illustrations/heroIMAGE.webp";
+import type { MessagesProps } from "@/types/MessagesProps";
 
-export function HowItWorks() {
+export function HowItWorks({ messages }: MessagesProps) {
+  const { howItWorks } = messages;
+
   return (
     <section className="section bg-teal-light" id="como-funciona" aria-labelledby="how-title">
       <div className="container">
@@ -20,9 +22,9 @@ export function HowItWorks() {
 
           <div className="lg:max-w-[640px]">
             <Reveal stagger={0.12}>
-              <span className="section-eyebrow">{es.howItWorks.eyebrow}</span>
+              <span className="section-eyebrow">{howItWorks.eyebrow}</span>
               <h2 id="how-title" className="section-title">
-                {es.howItWorks.titleLines.map((line) => (
+                {howItWorks.titleLines.map((line) => (
                   <span key={line} className="block">
                     {line}
                   </span>
@@ -33,7 +35,7 @@ export function HowItWorks() {
         </div>
 
         <Reveal stagger={0.12} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {es.howItWorks.steps.map((step) => (
+          {howItWorks.steps.map((step) => (
             <article key={step.number} className="card bg-white">
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal text-dark text-sm font-bold">
                 {step.number}

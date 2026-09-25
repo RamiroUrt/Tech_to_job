@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import es from "@/messages/es.json";
 import { Reveal } from "@/components/ui/reveal";
+import type { MessagesProps } from "@/types/MessagesProps";
 
-export function Testimonials() {
+export function Testimonials({ messages }: MessagesProps) {
+  const { testimonials, ui } = messages;
   const scroller = useRef<HTMLDivElement>(null);
 
   const scrollByCard = (direction: 1 | -1) => {
@@ -20,9 +21,9 @@ export function Testimonials() {
     <section className="section" id="testimonios" aria-labelledby="testimonios-title">
       <div className="container">
         <Reveal stagger={0.12}>
-          <span className="section-eyebrow">{es.testimonials.eyebrow}</span>
+          <span className="section-eyebrow">{testimonials.eyebrow}</span>
           <h2 id="testimonios-title" className="section-title">
-            {es.testimonials.title}
+            {testimonials.title}
           </h2>
         </Reveal>
 
@@ -32,7 +33,7 @@ export function Testimonials() {
               ref={scroller}
               className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
             >
-              {es.testimonials.items.map((item) => (
+              {testimonials.items.map((item) => (
                 <article
                   key={item.name}
                   data-card
@@ -52,9 +53,9 @@ export function Testimonials() {
                       </svg>
 
                       <blockquote className="text-sm text-dark leading-relaxed mt-4">
-                        {es.testimonials.quotePrefix}
+                        {testimonials.quotePrefix}
                         {item.quote}
-                        {es.testimonials.quoteSuffix}
+                        {testimonials.quoteSuffix}
                       </blockquote>
                     </div>
 
@@ -72,7 +73,7 @@ export function Testimonials() {
                       </div>
                       <a
                         href={item.linkedin}
-                        aria-label={`Perfil de ${item.name} en LinkedIn`}
+                        aria-label={ui.linkedinProfile.replace("{name}", item.name)}
                         className="text-dark-subtle hover:text-teal-dark transition-colors"
                       >
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -89,7 +90,7 @@ export function Testimonials() {
           <button
             type="button"
             onClick={() => scrollByCard(-1)}
-            aria-label="Testimonios anteriores"
+            aria-label={ui.previousTestimonials}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-dark shadow-md border border-gray-200 hover:bg-gray-50"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -100,7 +101,7 @@ export function Testimonials() {
           <button
             type="button"
             onClick={() => scrollByCard(1)}
-            aria-label="Siguientes testimonios"
+            aria-label={ui.nextTestimonials}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-dark shadow-md border border-gray-200 hover:bg-gray-50"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

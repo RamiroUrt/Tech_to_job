@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "title": "TechToJob — Community for developers and tech companies in Spanish",
+    "description": "Join the Spanish-speaking tech community where developers, engineers and companies actually connect. Post your profile, join tournaments and find real opportunities.",
+    "ogTitle": "TechToJob — Tech community in Spanish",
+    "ogDescription": "Developers and tech companies meet before a role even opens. Join the community."
+  },
+  "ui": {
+    "home": "Home",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "emailLabel": "Email address",
+    "previousTestimonials": "Previous testimonials",
+    "nextTestimonials": "Next testimonials",
+    "linkedinProfile": "{name}'s profile on LinkedIn",
+    "changeLanguage": "Change language",
+    "dateLocale": "en-GB",
+    "languages": {
+      "es": "Español",
+      "en": "English"
+    }
+  },
+  "header": {
+    "nav": [
+      { "href": "#talento", "label": "Talent" },
+      { "href": "#empresas", "label": "Companies" },
+      { "href": "#torneos", "label": "Tournaments" },
+      { "href": "#noticias", "label": "News" }
+    ],
+    "discordButton": "Join the Discord"
+  },
+  "hero": {
+    "eyebrow": "Tech community in Spanish",
+    "title": "Stop sending CVs into the void.",
+    "titleHighlight": "Build things and let people find you.",
+    "description": "TechToJob is the community where developers, engineers and tech companies meet before a role even opens. You take part, you build, they find you.",
+    "discordButton": "Join the community",
+    "discordHint": "FREE · NO CV · STRAIGHT TO THE GROUP"
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Your next opportunity comes from showing up, not from filling out forms.",
+    "titleLines": [
+      "Your next opportunity",
+      "comes from showing up,",
+      "not from filling out forms."
+    ],
+    "steps": [
+      {
+        "number": "01",
+        "title": "Join the server",
+        "description": "You join the Discord and introduce yourself. No long forms, no automated filters that discard you before a person reads you."
+      },
+      {
+        "number": "02",
+        "title": "Take part in the community",
+        "description": "You answer questions, share projects, join tournaments. People start to know you by what you do, not by your CV."
+      },
+      {
+        "number": "03",
+        "title": "Companies find you",
+        "description": "The companies in the community see how you work. When something comes up, they message you directly."
+      },
+      {
+        "number": "04",
+        "title": "You land a real opportunity",
+        "description": "No algorithm decides. It's a person who already knows who you are and what you bring."
+      }
+    ]
+  },
+  "talento": {
+    "eyebrow": "Offer yourself as talent",
+    "title": "Let them find you.",
+    "description": "Post your profile with your stack, your level and what you're looking for. Companies in the community check it when they need someone like you. No automated filters throwing your CV away before a person reads it.",
+    "features": [
+      {
+        "title": "No filters turning you down",
+        "description": "There's no algorithm deciding whether you get in. A human reads your profile."
+      },
+      {
+        "title": "You don't need to be senior",
+        "description": "Juniors, mid-levels and seniors all fit. What matters is what you can do."
+      },
+      {
+        "title": "Free for you",
+        "description": "Posting your profile costs nothing. Companies pay to access profiles, you don't."
+      },
+      {
+        "title": "They message you directly",
+        "description": "If you fit the role, they reach out with no middlemen. No generic auto-reply email."
+      }
+    ],
+    "discordButton": "Post my profile"
+  },
+  "empresas": {
+    "eyebrow": "Post as a company",
+    "title": "See people work before you hire them.",
+    "description": "Post what you need and get access to real profiles from the community. Not just a CV: you see how they think, what they build and how they solve problems. Less screening, more context.",
+    "features": [
+      {
+        "title": "Profiles with real context",
+        "description": "Not just their CV. You see their projects, how they take part and what others think."
+      },
+      {
+        "title": "Direct access to talent",
+        "description": "No agencies filtering on their own. You decide who to contact."
+      },
+      {
+        "title": "Less time searching",
+        "description": "The community already has active developers and engineers. You don't start from zero."
+      },
+      {
+        "title": "Post for free",
+        "description": "Posting a job opening costs nothing. You only pay if you want wider profile access."
+      }
+    ],
+    "discordButton": "Post a job opening"
+  },
+  "tournaments": {
+    "eyebrow": "Tournaments",
+    "title": "Compete, build and get seen.",
+    "description": "Open challenges where you build something real, with a jury and public criteria. What gets won actually gets used. This very website came out of a tournament.",
+    "items": [
+      {
+        "title": "Tournament #2 · TechToJob landing",
+        "category": "Design + Development",
+        "description": "Design and build the official TechToJob website with Next.js, TypeScript and Tailwind. The landing you're looking at is the result.",
+        "status": "Finished"
+      },
+      {
+        "title": "Tournament #3 · Coming soon",
+        "category": "To be announced",
+        "description": "Next community challenge. Categories and rules in the works.",
+        "status": "Coming soon"
+      },
+      {
+        "title": "Tournament #4 · To be confirmed",
+        "category": "To be announced",
+        "description": "More challenges are coming. Each one with a winner who takes home more than a prize.",
+        "status": "To be announced"
+      }
+    ],
+    "discordButton": "See tournaments on Discord"
+  },
+  "networking": {
+    "eyebrow": "Networking",
+    "title": "The good jobs aren't found. They're heard about.",
+    "description": "Channels per area, people in the sector and questions answered in minutes. Jobs someone shares because they know the hiring manager. Some of the best jobs never even get posted.",
+    "channels": [
+      { "name": "#development", "description": "Backend, frontend, fullstack" },
+      { "name": "#devops-sre", "description": "Infrastructure and operations" },
+      { "name": "#data-ai", "description": "Data engineering, ML, AI" },
+      { "name": "#design", "description": "UI, UX, product" },
+      { "name": "#jobs", "description": "Jobs and opportunities" },
+      { "name": "#general", "description": "Anything sector-related" }
+    ],
+    "discordButton": "Join the Discord"
+  },
+  "news": {
+    "eyebrow": "News",
+    "title": "The latest from TechToJob.",
+    "items": [
+      {
+        "title": "Tournament #2 results · The new site is live",
+        "date": "2026-09-08",
+        "category": "Tournaments",
+        "summary": "More than 12 entries. The winning design is deployed and it's what you're looking at right now."
+      },
+      {
+        "title": "New specialist channels on the Discord",
+        "date": "2026-09-02",
+        "category": "Community",
+        "summary": "We opened channels dedicated to data engineering, cybersecurity and software architecture."
+      },
+      {
+        "title": "How to land your first tech job with no experience",
+        "date": "2026-08-28",
+        "category": "Guides",
+        "summary": "An article with practical advice from community members who went through it."
+      }
+    ],
+    "readMore": "See all news"
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Jobs, tournaments and what's worth your time in the sector.",
+    "description": "Every Monday: new openings, tournaments starting and news from the community. One email a week, not one more.",
+    "placeholder": "you@email.com",
+    "button": "Send it to me on Mondays",
+    "spamNotice": "No spam. Unsubscribe in one click."
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "They're already in. You could be next.",
+    "profileLink": "View profile",
+    "quotePrefix": "“",
+    "quoteSuffix": "”",
+    "items": [
+      {
+        "name": "Laura Méndez",
+        "role": "Frontend Jr.",
+        "quote": "I joined with nothing to show and a few months later a company messaged me about a project I'd posted on the server.",
+        "linkedin": "#",
+        "avatar": {
+          "src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80",
+          "alt": "Portrait of Laura Méndez"
+        }
+      },
+      {
+        "name": "Diego Fuentes",
+        "role": "Backend · 3 years",
+        "quote": "I stopped firing CVs into the void. Here people know me by how I work, not by a piece of paper.",
+        "linkedin": "#",
+        "avatar": {
+          "src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80",
+          "alt": "Portrait of Diego Fuentes"
+        }
+      },
+      {
+        "name": "Sofía Roldán",
+        "role": "Data Analyst",
+        "quote": "I answered a question in a channel on a Sunday and a week later I was in a first interview.",
+        "linkedin": "#",
+        "avatar": {
+          "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80",
+          "alt": "Portrait of Sofía Roldán"
+        }
+      },
+      {
+        "name": "Martín Quiroga",
+        "role": "Student",
+        "quote": "The best place to get into the sector with no prior experience. It feels like a real community.",
+        "linkedin": "#",
+        "avatar": {
+          "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80",
+          "alt": "Portrait of Martín Quiroga"
+        }
+      },
+      {
+        "name": "Carla Suárez",
+        "role": "Fullstack · 5 years",
+        "quote": "We posted an opening and 48 hours later we had candidates who already knew us. Never going back to an agency.",
+        "linkedin": "#",
+        "avatar": {
+          "src": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=80",
+          "alt": "Portrait of Carla Suárez"
+        }
+      }
+    ]
+  },
+  "closing": {
+    "eyebrow": "Last step",
+    "title": "If you got this far, you already know what TechToJob is.",
+    "description": "It's not one more job board. It's a community where people get to know each other, build things together and opportunities show up on their own.",
+    "discordButton": "Join the community"
+  },
+  "footer": {
+    "brand": "Community for developers and tech companies in Spanish.",
+    "columns": {
+      "talento": {
+        "title": "Talent",
+        "links": [
+          { "label": "Post your profile", "href": "#talento" },
+          { "label": "Open tournaments", "href": "#torneos" },
+          { "label": "Networking channels", "href": "#networking" }
+        ]
+      },
+      "empresas": {
+        "title": "Companies",
+        "links": [
+          { "label": "Post a job opening", "href": "#empresas" },
+          { "label": "How it works", "href": "#como-funciona" },
+          { "label": "Access profiles", "href": "#empresas" }
+        ]
+      },
+      "comunidad": {
+        "title": "Community",
+        "links": [
+          { "label": "Join the Discord", "href": "https://discord.gg/h9FFgKdkRd", "external": true },
+          { "label": "News", "href": "#noticias" },
+          { "label": "Newsletter", "href": "#newsletter" }
+        ]
+      }
+    },
+    "social": [
+      { "label": "Discord", "href": "https://discord.gg/h9FFgKdkRd", "icon": "discord" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/company/techtojob/", "icon": "linkedin" },
+      { "label": "X", "href": "https://x.com/techtojob", "icon": "x" },
+      { "label": "Instagram", "href": "https://www.instagram.com/techtojob", "icon": "instagram" }
+    ],
+    "legal": "© 2026 TechToJob · Legal notice · Privacy"
+  }
+}

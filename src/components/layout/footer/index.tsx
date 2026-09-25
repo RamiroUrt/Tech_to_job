@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import es from "@/messages/es.json";
 import { GlueBalls } from "@/components/ui/glue-balls";
 import { Reveal } from "@/components/ui/reveal";
+import type { MessagesProps } from "@/types/MessagesProps";
 
 const socialIcons: Record<string, React.ReactNode> = {
   discord: (
@@ -27,7 +27,9 @@ const socialIcons: Record<string, React.ReactNode> = {
   ),
 };
 
-export function Footer() {
+export function Footer({ messages }: MessagesProps) {
+  const { footer } = messages;
+
   return (
     <footer className="footer relative" role="contentinfo">
       <GlueBalls />
@@ -43,11 +45,11 @@ export function Footer() {
               loading="lazy"
             />
             <p className="text-sm text-gray-400 mt-5 max-w-[280px] leading-relaxed">
-              {es.footer.brand}
+              {footer.brand}
             </p>
           </div>
 
-          {Object.entries(es.footer.columns).map(([key, column]) => (
+          {Object.entries(footer.columns).map(([key, column]) => (
             <div key={key}>
               <h3 className="footer-heading">{column.title}</h3>
               <ul className="footer-links">
@@ -69,9 +71,9 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={0.15} className="footer-bottom">
-          <span>{es.footer.legal}</span>
+          <span>{footer.legal}</span>
           <div className="flex items-center gap-4">
-            {es.footer.social.map((social) => (
+            {footer.social.map((social) => (
               <a
                 key={social.label}
                 href={social.href}

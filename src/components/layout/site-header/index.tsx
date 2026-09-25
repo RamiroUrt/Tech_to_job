@@ -2,15 +2,22 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import es from "@/messages/es.json";
+import { LanguageSwitch } from "@/components/ui/language-switch";
+import type { Locale } from "@/messages";
+import type { MessagesProps } from "@/types/MessagesProps";
 
-export function SiteHeader() {
+type SiteHeaderProps = MessagesProps & {
+  locale: Locale;
+};
+
+export function SiteHeader({ messages, locale }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { header, ui } = messages;
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
       <div className="container flex items-center justify-between h-16 lg:h-[72px]">
-        <a href="#top" aria-label="TechToJob — Inicio" className="flex items-center gap-2">
+        <a href="#top" aria-label={`TechToJob — ${ui.home}`} className="flex items-center gap-2">
           <Image
             src="/logos/v2Negativo.svg"
             alt="TechToJob"
@@ -20,8 +27,8 @@ export function SiteHeader() {
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-          {es.header.nav.map((link) => (
+        <nav className="hidden md:flex items-center gap-8" aria-label={ui.mainNav}>
+          {header.nav.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -30,20 +37,23 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <div className="px-2 py-2">
+            <LanguageSwitch locale={locale} ui={ui} />
+          </div>
           <a
             href="https://discord.gg/h9FFgKdkRd"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-discord text-sm min-h-[42px] px-5"
           >
-            {es.header.discordButton}
+            {header.discordButton}
           </a>
         </nav>
 
         <button
           type="button"
           className="md:hidden p-2 text-dark"
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-label={menuOpen ? ui.closeMenu : ui.openMenu}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -65,9 +75,9 @@ export function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden border-t border-gray-200 bg-white" aria-label="Navegación móvil">
+        <nav className="md:hidden border-t border-gray-200 bg-white" aria-label={ui.mobileNav}>
           <div className="container py-4 flex flex-col gap-1">
-            {es.header.nav.map((link) => (
+            {header.nav.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -77,6 +87,7 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
+            <LanguageSwitch locale={locale} ui={ui} className="self-start" />
             <a
               href="https://discord.gg/h9FFgKdkRd"
               target="_blank"
@@ -84,7 +95,7 @@ export function SiteHeader() {
               className="btn btn-discord mt-3"
               onClick={() => setMenuOpen(false)}
             >
-              {es.header.discordButton}
+              {header.discordButton}
             </a>
           </div>
         </nav>

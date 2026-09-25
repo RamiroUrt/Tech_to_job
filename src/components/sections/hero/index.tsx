@@ -3,13 +3,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import es from "@/messages/es.json";
 import { HeroNotebook } from "./hero-notebook";
 import { GlueBalls } from "@/components/ui/glue-balls";
+import type { MessagesProps } from "@/types/MessagesProps";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function Hero() {
+export function Hero({ messages }: MessagesProps) {
+  const { hero } = messages;
   const sectionRef = useRef<HTMLElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
   const laptopRef = useRef<HTMLDivElement>(null);
@@ -132,12 +133,12 @@ export function Hero() {
       <div className="container relative z-10 grid items-center gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-4">
         <div ref={copyRef}>
           <h1 id="hero-title" className="section-title text-white mt-4">
-            {es.hero.title}
+            {hero.title}
             <br />
-            <span className="text-teal">{es.hero.titleHighlight}</span>
+            <span className="text-teal">{hero.titleHighlight}</span>
           </h1>
           <p className="section-description text-teal mt-6 max-w-[560px]">
-            {es.hero.description}
+            {hero.description}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
             <a
@@ -146,23 +147,24 @@ export function Hero() {
               rel="noopener noreferrer"
               className="btn btn-discord"
             >
-              {es.hero.discordButton}
+              {hero.discordButton}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <line x1="7" y1="17" x2="17" y2="7" />
                 <polyline points="7 7 17 7 17 17" />
               </svg>
             </a>
             <span className="text-xs font-semibold tracking-widest text-gray-400 self-center">
-              {es.hero.discordHint}
+              {hero.discordHint}
             </span>
           </div>
         </div>
 
         <HeroNotebook
-          laptopRef={laptopRef}
-          screenRef={screenRef}
-          baseRef={baseRef}
-        />
+            messages={messages}
+            laptopRef={laptopRef}
+            screenRef={screenRef}
+            baseRef={baseRef}
+          />
       </div>
     </section>
   );
